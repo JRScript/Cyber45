@@ -1,6 +1,5 @@
-# Cyber45
-# 
-Get every month IOC's from Cyber45.com in CSV format
+# Cyber45 IOC Automation
+# Get every month IOC's from Cyber45.com in CSV format
 
 Step 1: Modules Required:
 requests, json, pandas, csv, tkinter, time
