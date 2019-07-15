@@ -6,7 +6,6 @@ import pandas as pd
 import csv
 import tkinter as tk
 import time
-import os
 from tkinter import simpledialog
 
 def cyber():
@@ -23,7 +22,6 @@ def cyber():
     data = pd.read_json('result.json')
     columns = []
     all_rows = []
-    cwd = os.getcwd()
     for items in data["items"]:
         row = ["" for col in columns]
         for key, value in items.items():
@@ -36,7 +34,7 @@ def cyber():
             row[index] = value
         all_rows.append(row)
 
-    with open(cwd+"\\Results\\IOC "+ time.strftime("%m%d%Y-%H%M%S") +".csv", "w", newline="") as csvfile:
+    with open("IOC "+ time.strftime("%m%d%Y-%H%M%S") +".csv", "w", newline="") as csvfile:
         writer = csv.writer(csvfile) 
         writer.writerow(columns) # first row is the headers
         writer.writerows(all_rows)# then, the rows
